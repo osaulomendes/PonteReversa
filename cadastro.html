@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="css/normalise.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+	<div class="header">
+			<header>
+				<div class="coluna col">
+					<h1 class="logo">Ponte Reversa</h1>
+				</div>
+				<div class="coluna col">
+					<nav>
+						<ul class="menu inline sem-marcador">
+							<li><a href="index.html">home</a></li>
+							
+							<li><a href="clientes.html">
+							clientes</a></li>
+							
+							<li><a href="servicos.html">serviços</a></li>
+							
+							<li><a href="sobre.html">sobre</a></li>
+							
+							<li><a href="contato.html">contato</a></li>
+							
+							<li><a href="cadastro.html">cadastro</a></li>
+							
+						</ul>
+					</nav>
+				</div>
+			</header>
+		</div>
+    <header>
+        <div class="container">
+            <h1>Cadastro</h1>
+        </div>
+    </header>
+    <main class="container">
+        <section>
+            <h2>Ponte Reversa</h2>
+            <table>
+                <tr>
+                    <th>Nome</th>
+                    <th>Rua</th>
+                    <th>Bairro</th>              
+                    <th>Telefone Celular</th>
+					<th>CPF</th>
+                </tr>
+                <tbody class="contato">
+
+                </tbody>
+            </table>
+        </section>
+        <section>
+            <h2>Cadastro</h2>
+            <form id="formulario" >
+                <fieldset>
+                    <label for="campo-nome">Nome:</label>
+                    <input id="campo-nome" type="text" placeholder="digite o nome do seu Contato">
+                </fieldset>
+                <fieldset class="campo-endereco">
+                    <label for="campo-endereco">Rua:</label>
+                    <input id="campo-endereco" type="text" placeholder="digite o endereço do seu Contato">
+                </fieldset>
+                <fieldset class="campo-bairro">
+                    <label for="campo-bairro">Bairro:</label>
+                    <input id="campo-bairro" type="text" placeholder="digite o seu bairro do seu Contato">
+                </fieldset>
+                <fieldset class="campo-endereco">
+                    <label for="campo-telefoneFixo">Telefone Fixo:</label>
+                    <input id="campo-telefoneFixo" type="text" placeholder="digite o telefone Fixo">
+                </fieldset>
+                <fieldset class="campo-TelefoneCelular">
+                    <label for="campo-celular">Telefone Celular:</label>
+                    <input id="campo-celular" type="text" placeholder="digite o telefone Celular">
+                </fieldset>
+				 <fieldset class="campo-CPF">
+                    <label for="campo-cpf">CPF:</label>
+                    <input id="campo-cpf" type="text" placeholder="digite o cpf">
+                </fieldset>
+                <button id="adicionar-morador" class="botao bto-principal">Adicionar Morador</button>
+            </form>
+        </section>
+    </main>
+    <script src="js/js/index.js"></script>
+</body>
+</html>
