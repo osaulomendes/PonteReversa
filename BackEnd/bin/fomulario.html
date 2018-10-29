@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<body>
+<h1>Cadastramento de produto</h1>
+<p>Cadastramento de produto através de web service.</p>
+
+<form action="http://127.0.0.1:880/adicionarProduto"  method="post">
+  cpf/cnpj:
+  <input type="text" name="cpf/cnpj" value=""><br />
+  nome:
+  <input type="text" name="nome" value=""><br />
+  email:
+  <input type="text" name="email" value=""><br />
+  semha:
+  <input type="text" name="senha" value=""><br />
+  tipo de usuario: <br />
+  <input type="radio" name="tipo" value="1" checked>morador<br />
+  <input type="radio" name="tipo" value="2">associaçao <br />
+  <br /><br />
+  <input type="submit" value="cadastrar">
+</form> 
+
+<br />
+<h1>Consultar produto</h1>
+<p>Consulta produto no estoque através de web service.</p>
+
+<form action="http://127.0.0.1:880/consultarProduto"  method="get">
+  Descrição:
+  <input type="text" name="cpf/cnpj" value=""><br />
+  senha:
+  <input type="text" name="senha" value=""><br />
+
+  <br /><br />
+  <input type="submit" value="consultar">
+</form> 
+<!--
+<br />
+<h1>Remover produto</h1>
+<p>Remove produto do estoque através de web service.</p>
+
+<form action="http://127.0.0.1:880/removerProduto"  method="get">
+  Descrição:
+  <input type="text" name="descricao" value=""><br />
+  <br /><br />
+  <input type="submit" value="remover">
+</form> 
+
+
+<br />
+<h1>Consultar total em estoque</h1>
+<p>Consulta a quantidade total de produtos em estoque.</p>
+
+<form action="http://127.0.0.1:880/totalEmEstoque"  method="get">
+  <br /><br />
+  <input type="submit" value="consultar">
+</form> 
+
+
+<br />
+<h1>Consultar valor total em estoque</h1>
+<p>Consulta o valor total dos produtos em estoque.</p>
+
+<form action="http://127.0.0.1:880/valorEmEstoque"  method="get">
+  <br /><br />
+  <input type="submit" value="consultar">
+</form> 
+-->
+
+</body>
+</html>
+
