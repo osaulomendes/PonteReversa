@@ -1,91 +1,259 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Cadastro</title>
-    <link rel="stylesheet" href="css/normalise.css">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-	<div class="header">
-			<header>
-				<div class="coluna col">
-					<h1 class="logo">Ponte Reversa</h1>
-				</div>
-				<div class="coluna col">
-					<nav>
-						<ul class="menu inline sem-marcador">
-							<li><a href="index.html">home</a></li>
-							
-							<li><a href="clientes.html">
-							clientes</a></li>
-							
-							<li><a href="servicos.html">serviços</a></li>
-							
-							<li><a href="sobre.html">sobre</a></li>
-							
-							<li><a href="contato.html">contato</a></li>
-							
-							<li><a href="cadastro.html">cadastro</a></li>
-							
-						</ul>
-					</nav>
-				</div>
-			</header>
-		</div>
-    <header>
-        <div class="container">
-            <h1>Cadastro</h1>
-        </div>
-    </header>
-    <main class="container">
-        <section>
-            <h2>Ponte Reversa</h2>
-            <table>
-                <tr>
-                    <th>Nome</th>
-                    <th>Rua</th>
-                    <th>Bairro</th>              
-                    <th>Telefone Celular</th>
-					<th>CPF</th>
-                </tr>
-                <tbody class="contato">
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="icon" href="img/favicon.png" type="image/png">
+        <title>Occupy Business</title>
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="vendors/linericon/style.css">
+        <link rel="stylesheet" href="css/font-awesome.min.css">
+        <link rel="stylesheet" href="vendors/owl-carousel/owl.carousel.min.css">
+        <link rel="stylesheet" href="vendors/lightbox/simpleLightbox.css">
+        <link rel="stylesheet" href="vendors/nice-select/css/nice-select.css">
+        <link rel="stylesheet" href="vendors/animate-css/animate.css">
+        <link rel="stylesheet" href="vendors/swiper/css/swiper.min.css">
+        <!-- main css -->
+        <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/responsive.css">
+    </head>
+    <body>
+        
+        <!--================Header Menu Area =================-->
+        <header class="header_area">
+            <div class="main_menu">
+            	<nav class="navbar navbar-expand-lg navbar-light">
+					<div class="container box_1620">
+						<!-- Brand and toggle get grouped for better mobile display -->
+						<a class="navbar-brand logo_h" href="index.html"><img src="img/logo.png" alt=""/a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<!-- Collect the nav links, forms, and other content for toggling -->
+						<div class="collapse navbar-collapse offset" id="navbarSupportedContent">
+							<ul class="nav navbar-nav menu_nav justify-content-center">
+								<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> 
+								<li class="nav-item"><a class="nav-link" href="about-us.html">Sobre</a></li> 
+								<li class="nav-item"><a class="nav-link" href="service.html">Serviços</a>								
+								<li class="nav-item"><a class="nav-link" href="blog.html">Blog</a></li>		
+								<li class="nav-item"><a class="nav-link" href="contact.html">Contato</a></li>
+								<li class="nav-item"><a class="nav-link" href="cadastro.html">Cadastro</a></li>								
+									</ul>		 
+						        <ul class="nav navbar-nav navbar-right">
+								<li class="nav-item"><a href="#"><i class="fa fa-facebook"></i></a></li>
+								<li class="nav-item"><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<li class="nav-item"><a href="#"><i class="fa fa-dribbble"></i></a></li>
+								<li class="nav-item"><a href="#"><i class="fa fa-behance"></i></a></li>
+								<li class="nav-item"><a href="#" class="search"><i class="lnr lnr-magnifier"></i></a></li>
+							</ul>
+						</div> 
+					</div>
+            	</nav>
+            </div>
+        </header>
+        <!--================Header Menu Area =================-->
+        <!--============Sing Up and Log In area===============-->
+        
+<br>
+<br>
+<br>
+<br>
+<br>
+		
+		<section id="signup_area" class="signup_area">
+				<div class="row m0">
+						<div class="col-lg-6 p0">
+						</div>
+						<div class="col-lg-6 p0">							
+					    <div id="signup_area_form" class="signup_area_form">
+							<br>
+		<h1 >Cadastramento de Usuário</h1>
 
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2>Cadastro</h2>
-            <form id="formulario" >
-                <fieldset>
-                    <label for="campo-nome">Nome:</label>
-                    <input id="campo-nome" type="text" placeholder="digite o nome do seu Contato">
-                </fieldset>
-                <fieldset class="campo-endereco">
-                    <label for="campo-endereco">Endereço:</label>
-                    <input id="campo-endereco" type="text" placeholder="digite o endereço do seu Contato">
-                </fieldset>
-                <fieldset class="campo-bairro">
-                    <label for="campo-bairro">Bairro:</label>
-                    <input id="campo-bairro" type="text" placeholder="digite o seu bairro do seu Contato">
-                </fieldset>
-                <fieldset class="campo-email">
-                    <label for="campo-email">email:</label>
-                    <input id="campo-email" type="text" placeholder="digite o email">
-                </fieldset>
-                <fieldset class="campo-TelefoneCelular">
-                    <label for="campo-celular">Telefone Celular:</label>
-                    <input id="campo-celular" type="text" placeholder="digite o telefone Celular">
-                </fieldset>
-				 <fieldset class="campo-CPF">
-                    <label for="campo-cpf">CPF:</label>
-                    <input id="campo-cpf" type="text" placeholder="digite o cpf">
-                </fieldset>
-                <button id="adicionar-morador" class="botao bto-principal">Adicionar Morador</button>
-            </form>
-        </section>
-    </main>
-    <script src="js/index.js"></script>
-</body>
+<form id="signup_area_form"  action="http://127.0.0.1:880/adicionarProduto"  method="post">
+  <div class="col-lg-9">
+	<form class="row contact_form" action="contact_process.php" method="post" id="contactForm" novalidate="novalidate">
+		<div class="col-md-6">
+			<div class="form-group">
+			    CPF/CNPJ
+				<input type="text" class="form-control" id="document" name="document" placeholder="Digite seu CPF/CNPJ"></div>
+				Nome
+				<input type="text" class="form-control" id="name" name="name" placeholder="Digite seu nome"></div>
+			<div class="form-group">
+				Email
+				<input type="email" class="form-control" id="email" name="email" placeholder="Digite o email">
+			</div>
+			<div class="form-group">
+				Endereço
+				<input type="text" class="form-control" id="subject" name="subject" placeholder="Digite o endereço">
+			</div>
+		</div>
+		<div class="col-md-6">
+			<div class="form-group">
+				Senha
+				<textarea class="form-control" name="key" id="key" rows="1" placeholder="Senha"></textarea>
+			</div>
+		</div>
+		<div>
+			<button type="submit" value="submit" class="btn submit_btn">Cadastrar</button>
+		</div>
+
+<br />
+<!--
+<h1>Consultar produto</h1>
+<p>Consulta produto no estoque através de web service.</p>
+
+<form action="http://127.0.0.1:880/consultarProduto"  method="get">
+  Descrição:
+  <input type="text" name="cpf/cnpj" value=""><br />
+  senha:
+  <input type="text" name="senha" value=""><br />
+
+  <br /><br />
+  <input type="submit" value="consultar">
+</form> 
+
+<br />
+<h1>Remover produto</h1>
+<p>Remove produto do estoque através de web service.</p>
+
+<form action="http://127.0.0.1:880/removerProduto"  method="get">
+  Descrição:
+  <input type="text" name="descricao" value=""><br />
+  <br /><br />
+  <input type="submit" value="remover">
+</form> 
+
+
+<br />
+<h1>Consultar total em estoque</h1>
+<p>Consulta a quantidade total de produtos em estoque.</p>
+
+<form action="http://127.0.0.1:880/totalEmEstoque"  method="get">
+  <br /><br />
+  <input type="submit" value="consultar">
+</form> 
+
+
+<br />
+<h1>Consultar valor total em estoque</h1>
+<p>Consulta o valor total dos produtos em estoque.</p>
+
+<form action="http://127.0.0.1:880/valorEmEstoque"  method="get">
+  <br /><br />
+  <input type="submit" value="consultar">
+</form> 
+-->
+</section>
+        
+       
+        <!--================ start footer Area  =================-->	
+        <footer class="footer-area">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3  col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">About Biznance</h6>
+                            <p>The world has become so fast paced that people don’t want to stand by reading a page of information, they would much rather look at a presentation and understand the message. It has come to a point where images and videos are</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">Navigation Links</h6>
+                            <div class="row">
+                                <div class="col-4">
+                                    <ul class="list">
+                                        <li><a href="#">Home</a></li>
+                                        <li><a href="#">Feature</a></li>
+                                        <li><a href="#">Services</a></li>
+                                        <li><a href="#">Portfolio</a></li>
+                                    </ul>
+                                </div>
+                                <div class="col-4">
+                                    <ul class="list">
+                                        <li><a href="#">Team</a></li>
+                                        <li><a href="#">Pricing</a></li>
+                                        <li><a href="#">Blog</a></li>
+                                        <li><a href="#">Contact</a></li>
+                                    </ul>
+                                </div>										
+                            </div>							
+                        </div>
+                    </div>							
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget">
+                            <h6 class="footer_title">Newsletter</h6>
+                            <p>For business professionals caught between high OEM price and mediocre print and graphic output, </p>		
+                            <div id="mc_embed_signup">
+                                <form target="_blank" action="https://spondonit.us12.list-manage.com/subscribe/post?u=1462626880ade1ac87bd9c93a&amp;id=92a4423d01" method="get" class="subscribe_form relative">
+                                    <div class="input-group d-flex flex-row">
+                                        <input name="EMAIL" placeholder="Email Address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email Address '" required="" type="email">
+                                        <button class="btn sub-btn"><span class="lnr lnr-location"></span></button>		
+                                    </div>									
+                                    <div class="mt-10 info"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 col-sm-6">
+                        <div class="single-footer-widget instafeed">
+                            <h6 class="footer_title">InstaFeed</h6>
+                            <ul class="list instafeed d-flex flex-wrap">
+                                <li><img src="img/instagram/Image-01.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-02.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-03.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-04.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-05.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-06.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-07.jpg" alt=""></li>
+                                <li><img src="img/instagram/Image-08.jpg" alt=""></li>
+                            </ul>
+                        </div>
+                    </div>						
+                </div>
+                
+            </div>
+            <div class="border_line"></div>
+			<div class="container">
+				<div class="row footer-bottom d-flex justify-content-between align-items-center">
+                    <p class="col-lg-8 col-md-8 footer-text m-0"><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart-o" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank">Colorlib</a>
+<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. --></p>
+                    <div class="col-lg-4 col-md-4 footer-social">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                        <a href="#"><i class="fa fa-behance"></i></a>
+                    </div>
+                </div>
+			</div>
+        </footer>
+		<!--================ End footer Area  =================-->
+        
+        
+        
+        
+        
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="js/jquery-3.2.1.min.js"></script>
+        <script src="js/popper.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <script src="js/stellar.js"></script>
+        <script src="vendors/lightbox/simpleLightbox.min.js"></script>
+        <script src="vendors/nice-select/js/jquery.nice-select.min.js"></script>
+        <script src="vendors/isotope/imagesloaded.pkgd.min.js"></script>
+        <script src="vendors/isotope/isotope-min.js"></script>
+        <script src="vendors/owl-carousel/owl.carousel.min.js"></script>
+        <script src="js/jquery.ajaxchimp.min.js"></script>
+        <script src="vendors/counter-up/jquery.waypoints.min.js"></script>
+        <script src="vendors/counter-up/jquery.counterup.js"></script>
+        <script src="js/mail-script.js"></script>
+        <script src="vendors/popup/jquery.magnific-popup.min.js"></script>
+        <script src="vendors/swiper/js/swiper.min.js"></script>
+        <script src="js/theme.js"></script>
+    </body>
 </html>

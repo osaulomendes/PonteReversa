@@ -22,7 +22,7 @@ public class usuarioservece {
 		diferencial = query.getInteger("tipo");
 		senha = query.getInteger("senha");
 		//p.setarusuario(diferencial, nome, email, numerodeid);
-		//p.setNumerodeid(numerodeid);
+		p.setNumerodeid(numerodeid);
 		p.setDiferencial(diferencial);
 		p.setEmail(email);
 		p.setNome(nome);
