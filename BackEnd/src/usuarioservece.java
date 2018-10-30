@@ -6,7 +6,8 @@ import org.simpleframework.http.Query;
 import org.simpleframework.http.Request;
 public class usuarioservece {
 	private usuariolist lista;
-	private usuario p;
+	
+	
 
 	public String adicionar(Request request) {
 		int diferencial;//intentifica se e 1 morador 2 associaçao 
@@ -14,6 +15,7 @@ public class usuarioservece {
 		 String email;
 		 int senha;
 		 int numerodeid;
+		 usuario p = new usuario();
 		
 		Query query = request.getQuery();
 		numerodeid = query.getInteger("cpf/cnpj");
