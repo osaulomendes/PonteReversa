@@ -1646,7 +1646,8 @@ button:focus {
 
 /* End Reservation Form Area css
 ============================================================================================ */
-/*============== contact_area css ================*/
+/*============== signup_area css ================*/
+
 
 .signup_area_form .form-group {
   text-align: center; 
@@ -1657,6 +1658,8 @@ button:focus {
 .signup_area{
 text-align: center;
 }
+
+/*============== contact_area css ================*/
 
 .mapBox {
   height: 420px;
@@ -3646,6 +3649,12 @@ h6 {
 .success_area .mission_text {
   float: right;
   margin-right: 130px;
+  
+}
+.success_area .education_title {
+  text-align: center;
+  margin-right: 130px;
+  color: #000
 }
 
 .success_area .right_dir .mission_text {
