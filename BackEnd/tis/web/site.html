@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>DiGestão - Cadastro Nutricionista</title>
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <!-- Bootstrap -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+     <div id="msg">
+
+  </div>
+    
+    <!-- FORM Cadastro Nutricionista-->
+    <section>
+        <div id="container-nutricionista">
+            <div class="row">
+                <div class="col-md-2"></div>
+
+                <form form id="cadastrarNutri" name="cadastraNutri" enctype="multipart/form-data" class="col-md-8 form-control-feedback">
+
+                    <h1 class="heading-cadastro">Cadastro de Nutricionista</h1>
+                    <div class="form-row">
+                        <div class="form-group form-control-feedback col-md-6">
+                            <label for="nome">Nome:</label>
+                            <input type="text" class="form-control" id="nomeInput" placeholder="Digite seu nome" required="required">
+                        </div>
+                        <div class="form-group col-md-6">
+                            <label for="login">Nome de Usuário: </label>
+                            <input type="text" class="form-control" name="nome" id="loginInput" placeholder="Digite seu nome" required>
+                        </div>
+                    </div>
+    
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="email">Email: </label>
+                            <input type="text" class="form-control" name="E-mail" id="emailInput" placeholder="Digite seu e-mail" required>
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <label for="senha">Senha: </label>
+                            <input type="password" class="form-control" name="senha" id="senhaInput" placeholder="Digite sua senha" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cpf">CPF: (Utilize apenas números) </label>
+                            <input type="number" class="form-control" name="cpf" id="cpfInput" placeholder="Digite seu CPF" required>
+                        </div>
+        
+                        <div class="form-group col-md-6">
+                            <label for="idade">Idade: </label>
+                            <input type="number" class="form-control" name="idade" id="idadeInput" placeholder="Digite sua idade" required >
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group col-md-6">
+                            <label for="cpf">CRN: (Utilize apenas números) </label>
+                            <input type="number" class="form-control" name="crn" id="crnInput" placeholder="Digite seu CRN" required>
+                        </div>
+    
+                        <div class="form-group col-md-6">
+                            <label for="escolaridade">Escolaridade: </label>
+                            <input type="text" class="form-control" name="escolaridade" id="escolaridadeInput" placeholder="Digite seu grau de escolaridade" required>
+                            <!-- <select class="custom-select">
+                               <option value="Ensino Superior Incompleto (Estágio)">Ensino Superior Incompleto (Estágio)</option>
+                                <option value="Ensino Superior Completo">Ensino Superior Completo</option>
+                           </select> -->
+                        </div>
+                    </div>
+
+                    <small class="form-text text-muted obs-dados">Seus dados não serão compartilhados com ninguém.</small>
+                </form>
+                <button type="button" class="btn btn-success" id="btnSubmitUsuario">Concluir</button>
+                <div class="col-md-2"></div>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="../js/default.js"></script>
+    <script type="text/javascript">
+    
+    //Cadastrar Usuario
+    $('#btnSubmitUsuario').click(() => {
+      if ($("#cadastrarNutri")[0].checkValidity()) {
+        //AJAX
+
+          $.ajax({
+            url: 'http://127.0.0.1:7200/TIS2',
+            type: "POST",
+            data: ({
+
+              nome: $('#nomeInput').val(),
+              login: $('#loginInput').val(),
+              email: $('#emailInput').val(),
+              senha: $('#senhaInput').val(),
+              idade: $('#idadeInput').val(),
+              cpf: $('#cpfInput').val(),
+              crn: $('#crnInput').val(),
+              escolaridade: $('#escolaridadeInput').val()
+
+            }),
+
+            success: function(response) {
+
+              if (response.status == 1) {
+
+                let nutricionista = {
+                  status: true,
+                  nome: $('#nomeInput').val(),
+                login: $('#loginInput').val(),
+              email: $('#emailInput').val(),
+              senha: $('#senhaInput').val(),
+              cpf: $('#cpfInput').val(),
+              idade: $('idadeInput').val(),
+              crn: $('#crnInput').val(),
+              escolaridade: $('escolaridadeInput').val()
+
+                };
+
+                let mensagem = {
+
+                  status: true,
+
+                  type: "success",
+
+                  message: "Cadastro realizado com sucesso"
+
+                };
+
+                localStorage.setItem('nutricionista', JSON.stringify(nutricionista));
+
+                localStorage.setItem('mensagem', JSON.stringify(mensagem));
+
+                window.location.href = "../index.html";
+
+              }else {
+
+                msgError(response.message);
+
+              }
+
+            },
+
+            error: function(event) {
+
+              msgError("Erro ao cadastrar usuário")
+
+              console.log(event);
+
+            }
+
+          });
+
+      } else {
+
+        msgError("Preencha os campos corretamente");
+
+      }
+
+    });
+
+  </script>
+
+</body>
+</html>

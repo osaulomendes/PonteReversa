@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt_br">
+
+<head>
+ 
+</head>
+
+<body>
+
+
+  <!-- Msg warning -->
+  <div id="msg">
+  </div>
+
+  <div class="container my-4">
+    <div class="col-xs-2 col-center-block">
+      <h5 class="modal-title" id="modalCadastroPratos">Cadastro de Usuario</h5>
+      </button>
+      <form id="cadastrarPratoForm" name="cadastrarPratoForm" enctype="multipart/form-data">
+        <div class="form-group">
+          <label for="nomeInput">Nome</label>
+          <input type="text" class="form-control" name="nome" id="nomeInput" placeholder="Nome" required>
+        </div>
+        <div class="form-group">
+          <label for="emailInput">E-mail</label>
+          <input type="text" class="form-control" name="E-mail" id="emailInput" placeholder="E-mail" required>
+        </div>
+        <div class="form-group">
+          <label for="senhaInput">Senha</label>
+          <input type="password" class="form-control" name="senha" id="senhaInput" placeholder="Senha" required>
+        </div>
+        <div class="form-group">
+          <label for="senhaInput">Confirmação Senha</label>
+          <input type="password" class="form-control" name="senha" id="confSenhaInput" placeholder="Senha" required>
+        </div>
+        <div class="form-group">
+          <label for="cpf">CPF</label>
+          <input type="number" class="form-control" name="cpf" id="cpfInput" placeholder="CPF" required>
+        </div>
+        <div class="form-group">
+          <label for="telefoneInput">Telefone</label>
+          <input type="number" class="form-control" name="telefone" id="telefoneInput" placeholder="Telefone" required>
+        </div>
+        <div class="form-group">  tipo de usuario: <br />
+          <input type="radio" name="tipo" value="1" checked>morador<br />
+          <input type="radio" name="tipo" value="2">associaçao <br /></div>
+        
+
+        
+
+      </form>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-success" id="btnSubmitUsuario">Concluir</button>
+        <a href="">
+          <button type="button" class="btn btn-danger" id="btnCancelarUsuario">Cancelar</button>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- bootstrap js -->
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="../js/default.js"></script>
+  <script type="text/javascript">
+    //Cadastrar Usuario
+    $('#btnSubmitUsuario').click(() => {
+      if ($("#cadastrarPratoForm")[0].checkValidity()) {
+        if ($('#senhaInput').val() == $('#confSenhaInput').val()) {
+          //AJAX
+          $.ajax({
+            url: 'http://127.0.0.1:7200/cadastrarUsuario',
+            type: "POST",
+            data: ({
+              nome: $('#nomeInput').val(),
+              email: $('#emailInput').val(),
+              senha: $('#senhaInput').val(),
+              cpf: $('#cpfInput').val(),
+              telefone: $('#telefoneInput').val()
+            }),
+            success: function(response) {
+              if (response.status == 1) {
+                let usuario = {
+                  status: true,
+                  nome: $('#nomeInput').val(),
+                  email: $('#emailInput').val(),
+                  senha: $('#senhaInput').val(),
+                  cpf: $('#cpfInput').val(),
+                  telefone: $('#telefoneInput').val()
+                };
+                let mensagem = {
+                  status: true,
+                  type: "success",
+                  message: "Cadastro realizado com sucesso"
+                };
+                sessionStorage.setItem('usuario', JSON.stringify(usuario));
+                sessionStorage.setItem('mensagem', JSON.stringify(mensagem));
+                window.location.href = "../index.html";
+              }else {
+                msgError(response.message);
+              }
+            },
+            error: function(event) {
+              msgError("Erro ao cadastrar usuário")
+              console.log(event);
+            }
+          })
+        } else {
+          msgError("As senhas não coincidem");
+        }
+      } else {
+        msgError("Preencha os campos corretamente");
+      }
+    })
+  </script>
+</body>
+
+</html>
